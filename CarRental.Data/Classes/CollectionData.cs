@@ -22,5 +22,9 @@ public class CollectionData : IData
     
     public List<IPerson> GetPersons() => _persons;
     public List<IVehicle> GetVehicles() => _vehicles;
+
+    //public List<IBooking> Get Bookings() => _bookings;
+
+    // Dessa tre ovan ska då också vara IEnumerable<Interface> för att det ska ske något slags urval
     
 }
