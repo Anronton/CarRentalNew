@@ -1,8 +1,8 @@
-﻿namespace CarRental.Data.Interfaces;
+﻿namespace CarRental.Common.Interfaces;
 
 public interface IData
 {
-    //List<IPerson> GetPersons();
-    //List<IVehicle> GetVehicles();
+    public List<IPerson> GetPersons();
+    public List<IVehicle> GetVehicles();
     //List<IBooking> GetBookings();
 }
