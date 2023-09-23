@@ -1,4 +1,7 @@
 ﻿@page "/"
+@using CarRental.Business.Classes
+@inject BookingProcessor b
+
 
 <PageTitle>Car Rental</PageTitle>
 
@@ -19,19 +22,18 @@
             </tr>
         </thead>
         <tbody>
-            <!--@foreach (var car in new List<Car> { car1, car2, car3, car4, car5 })
+            @foreach (var vehicle in b.GetVehicles())
             {
                 <tr>
-                    <th scope="row">@car.RegNo</th>
-                    <td>@car.Make</td>
-                    <td>@car.Odometer</td>
-                    <td>@car.CostKm</td>
-                    <td>@car.VehicleType</td>
-                    <td>@(car.VehicleType.GetCost())</td>
-                    <td>@car.VehicleStatus</td>
+                    <th scope="row">@vehicle.RegNo</th>
+                    <td>@vehicle.Make</td>
+                    <td>@vehicle.Odometer</td>
+                    <td>@vehicle.CostKm</td>
+                    <td>@vehicle.VehicleType</td>
+                    <td>@vehicle.DayCost(vehicle.VehicleType)</td>
+                    <td>@vehicle.VehicleStatus</td>
                 </tr>
-            }
-            -->
+            }           
         </tbody>
     </table>
 </div>
@@ -76,14 +78,14 @@
             </tr>
         </thead>
         <tbody>
-            <!--@foreach (var customer in new List<Customer> { Joe, Jane, Anron })
+            @foreach(var person in b.GetPersons())
             {
                 <tr>
-                    <th scope="row">@customer.PersonId</th>
-                    <td>@customer.LastName</td>
-                    <td>@customer.FirstName</td>
+                    <th scope="row">@person.CustomerId</th>
+                    <td>@person.LastName</td>
+                    <td>@person.FirstName</td>
                 </tr>
-            }-->
+            }
         </tbody>
     </table>
 </div>
