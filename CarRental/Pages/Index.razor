@@ -1,0 +1,91 @@
+﻿@page "/"
+
+<PageTitle>Car Rental</PageTitle>
+
+<h1 class="text-center">Car Rental</h1>
+
+<div>
+    <div class="heading-font">Vehicles</div>
+    <table class="table border border-secondary">
+        <thead>
+            <tr>
+                <th scope="col">RegNo</th>
+                <th scope="col">Make</th>
+                <th scope="col">Odometer</th>
+                <th scope="col">Cost Km</th>
+                <th scope="col">Vehicle Type</th>
+                <th scope="col">$ Day</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--@foreach (var car in new List<Car> { car1, car2, car3, car4, car5 })
+            {
+                <tr>
+                    <th scope="row">@car.RegNo</th>
+                    <td>@car.Make</td>
+                    <td>@car.Odometer</td>
+                    <td>@car.CostKm</td>
+                    <td>@car.VehicleType</td>
+                    <td>@(car.VehicleType.GetCost())</td>
+                    <td>@car.VehicleStatus</td>
+                </tr>
+            }
+            -->
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <div class="heading-font">Bookings</div>
+    <table class="table border border-secondary">
+        <thead>
+            <tr>
+                <th scope="col">RegNo</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Km Rented</th>
+                <th scope="col">Km Returned</th>
+                <th scope="col">Rented</th>
+                <th scope="col">Returned</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr>
+                    <th scope="row">Ett nummer</th>
+                    <td>KundID</td>
+                    <td>Innan</td>
+                    <td>Efter</td>
+                    <td>RDatum</td>
+                    <td>ReDatum</td>
+                    <td>Hyrd?</td>
+                </tr> -->
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <div class="heading-font">Customers</div>
+    <table class="table border border-secondary">
+        <thead>
+            <tr>
+                <th scope="col">SSN</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--@foreach (var customer in new List<Customer> { Joe, Jane, Anron })
+            {
+                <tr>
+                    <th scope="row">@customer.PersonId</th>
+                    <td>@customer.LastName</td>
+                    <td>@customer.FirstName</td>
+                </tr>
+            }-->
+        </tbody>
+    </table>
+</div>
+
+
