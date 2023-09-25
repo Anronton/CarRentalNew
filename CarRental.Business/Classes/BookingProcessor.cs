@@ -4,7 +4,7 @@ namespace CarRental.Business.Classes;
 
 public class BookingProcessor
 {
-    IData _data;
+    private readonly IData _data;
 
     public BookingProcessor(IData data)
     {
