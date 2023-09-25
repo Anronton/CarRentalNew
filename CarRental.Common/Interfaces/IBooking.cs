@@ -8,9 +8,9 @@ namespace CarRental.Common.Interfaces;
     IVehicle Vehicle { get; init; }
     IPerson Person { get; init; }
     int InitialOdometer { get; init; }
-    int ReturnOdometer { get; set; }
+    int? ReturnOdometer { get; set; }
     DateTime BookingDate { get; init; }
     DateTime? ReturnDate { get; set; }
-    double TotalCost { get; set; }
+    double? TotalCost { get; set; }
     VehicleBookingStatuses VehicleBookingStatus { get; set; }   
 }
