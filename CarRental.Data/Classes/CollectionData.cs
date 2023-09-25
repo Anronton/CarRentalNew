@@ -45,6 +45,26 @@ public class CollectionData : IData
             _bookings.Add(booking);
         }
 
+        var motorcycleToBook = _vehicles.SingleOrDefault(v => v.RegNo == "ABC123");
+        var customerJane = _persons.SingleOrDefault(p => p.CustomerId == 721111);
+        if (motorcycleToBook is not null && customerJane is not null)
+        {
+            motorcycleToBook.Odometer = 3350;
+
+            DateTime bookingDate = DateTime.Now.AddDays(-1);
+
+            Booking booking2 = new Booking(
+                motorcycleToBook,
+                customerJane,
+                3000,
+                bookingDate,
+                VehicleBookingStatuses.Closed
+            );
+            booking2.CloseBooking(3350, DateTime.Now);
+
+            _bookings.Add(booking2);
+        }
+
     }
     
     public IEnumerable<IPerson> GetPersons() => _persons;
