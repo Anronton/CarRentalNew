@@ -34,7 +34,7 @@ public class Booking : IBooking
         }
         else
         {
-            TotalCost = 0;
+            TotalCost = null;
         }
     }
 

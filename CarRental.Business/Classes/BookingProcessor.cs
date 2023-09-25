@@ -11,10 +11,8 @@ public class BookingProcessor
         _data = data;
     }
 
-    public IEnumerable<IPerson> GetPersons() => _data.GetPersons();
+    public IEnumerable<IPerson> GetPersons() => _data.GetPersons(); //Aaah här ska det läggas till kod
     public IEnumerable<IVehicle> GetVehicles() => _data.GetVehicles();
-    public IEnumerable<IBooking> GetBookings() => _data.GetBookings();
+    public IEnumerable<IBooking> GetBookings() => _data.GetBookings(); // här med!
     
-    //också lär det tillkomma logik för att beräkna mer kostnader här, kanske inte direkt i klassen som jag gjort nu.
-
 }
