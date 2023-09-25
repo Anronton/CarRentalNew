@@ -56,15 +56,19 @@
             </tr>
         </thead>
         <tbody>
-            <!--<tr>
-                    <th scope="row">Ett nummer</th>
-                    <td>KundID</td>
-                    <td>Innan</td>
-                    <td>Efter</td>
-                    <td>RDatum</td>
-                    <td>ReDatum</td>
-                    <td>Hyrd?</td>
-                </tr> -->
+            @foreach (var booking in b.GetBookings())
+            {
+                <tr>
+                    <th scope="row">@booking.Vehicle.RegNo</th>
+                    <td>@($"{booking.Person.FirstName} {booking.Person.LastName} ({booking.Person.CustomerId})")</td>
+                    <td>@booking.InitialOdometer</td>
+                    <td>@booking.ReturnOdometer</td>
+                    <td>@booking.BookingDate.ToShortDateString()</td>
+                    <td>@(booking.ReturnDate?.ToShortDateString() ?? "")</td>
+                    <td>@booking.TotalCost</td>
+                    <td>@booking.VehicleBookingStatus</td>
+                </tr> 
+            }
         </tbody>
     </table>
 </div>

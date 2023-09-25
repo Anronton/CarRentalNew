@@ -10,7 +10,7 @@ public class Car : IVehicle
     public int Odometer { get; init; }
     public double CostKm { get; init; }
     public VehicleTypes VehicleType { get; init; }
-    public VehicleStatuses VehicleStatus { get; init; }
+    public VehicleStatuses VehicleStatus { get; set; }
 
     public Car(string regNo, string make, int odometer, double costKm, VehicleTypes vehicleType, VehicleStatuses vehicleStatus) =>
         (RegNo, Make, Odometer, CostKm, VehicleType, VehicleStatus) = (regNo, make, odometer, costKm, vehicleType, vehicleStatus);

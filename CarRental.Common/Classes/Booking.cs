@@ -14,14 +14,16 @@ public class Booking : IBooking
     public double TotalCost { get; set; }
     public VehicleBookingStatuses VehicleBookingStatus { get; set; }
 
-    public Booking(IVehicle vehicle, IPerson person, int initialOdometer, DateTime bookingDate)
+    public Booking(IVehicle vehicle, IPerson person, int initialOdometer, DateTime bookingDate, VehicleBookingStatuses vehicleBookingStatus)
     {
         Vehicle = vehicle;
         Person = person;
         InitialOdometer = initialOdometer;
         BookingDate = bookingDate;
-        VehicleBookingStatus = VehicleBookingStatuses.Open;
+        VehicleBookingStatus = vehicleBookingStatus;
     }
+
+   
 
     public void CalculateTotalCost()
     {
