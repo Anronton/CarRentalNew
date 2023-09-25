@@ -8,7 +8,7 @@
 
     public enum VehicleBookingStatuses
     {
-        closed = 1,
-        open = 2
+        Closed = 1,
+        Open = 2
     }
 }

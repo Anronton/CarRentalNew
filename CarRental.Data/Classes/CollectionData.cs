@@ -13,11 +13,20 @@ public class CollectionData : IData
 
     void SeedData()
     {
-        _persons.Add(new Customer(1, "Jan", "Deg"));
-
+        //Vehicles
         _vehicles.Add(new Car("SIX666", "Volvo", 1000, 2.5, Common.Enums.VehicleTypes.Combi, Common.Enums.VehicleStatuses.Available));
-
         _vehicles.Add(new Motorcycle("ABC123", "Yamaha", 3000, 1, Common.Enums.VehicleTypes.Motorcycle, Common.Enums.VehicleStatuses.Booked));
+        _vehicles.Add(new Car("BKJ142", "Ford", 2500, 2, Common.Enums.VehicleTypes.Van, Common.Enums.VehicleStatuses.Available));
+        _vehicles.Add(new Car("BLZ420", "BMW", 5000, 5, Common.Enums.VehicleTypes.Sedan, Common.Enums.VehicleStatuses.Available));
+        _vehicles.Add(new Car("ORT141", "Saab", 10000, 1.5, Common.Enums.VehicleTypes.Combi, Common.Enums.VehicleStatuses.Available));
+
+        //Bookings
+        //_bookings.Add(new Booking()); 
+
+        //Customers
+        _persons.Add(new Customer(960321, "Jan", "Deg"));
+        _persons.Add(new Customer(690101, "John", "Doe"));
+        _persons.Add(new Customer(721111, "Jane", "Smith"));
     }
     
     public List<IPerson> GetPersons() => _persons;
