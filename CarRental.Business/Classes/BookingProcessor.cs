@@ -11,8 +11,8 @@ public class BookingProcessor
         _data = data;
     }
 
-    public IEnumerable<IPerson> GetPersons() => _data.GetPersons(); //Aaah här ska det läggas till kod
+    public IEnumerable<IPerson> GetPersons() => _data.GetPersons();
     public IEnumerable<IVehicle> GetVehicles() => _data.GetVehicles();
-    public IEnumerable<IBooking> GetBookings() => _data.GetBookings(); // här med!
+    public IEnumerable<IBooking> GetBookings() => _data.GetBookings();
     
 }

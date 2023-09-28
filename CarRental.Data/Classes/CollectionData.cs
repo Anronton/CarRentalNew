@@ -27,6 +27,7 @@ public class CollectionData : IData
         _vehicles.Add(new Car("ORT141", "Saab", 10000, 1.5, Common.Enums.VehicleTypes.Combi, Common.Enums.VehicleStatuses.Available));
 
         //Bookings
+        //-------------------------------------------------------------------------//
         var vehicleToBook = _vehicles.SingleOrDefault(v => v.RegNo == "SIX666");
         var customerToBook = _persons.SingleOrDefault(p => p.FirstName == "John");
 
@@ -44,6 +45,8 @@ public class CollectionData : IData
 
             _bookings.Add(booking);
         }
+        //--------------------------------------------------------------------------//
+
 
         var motorcycleToBook = _vehicles.SingleOrDefault(v => v.RegNo == "ABC123");
         var customerJane = _persons.SingleOrDefault(p => p.CustomerId == 721111);
@@ -64,7 +67,7 @@ public class CollectionData : IData
 
             _bookings.Add(booking2);
         }
-
+        //-----------------------------------------------------------------------------//
     }
     
     public IEnumerable<IPerson> GetPersons() => _persons;

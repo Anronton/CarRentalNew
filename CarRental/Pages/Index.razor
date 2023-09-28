@@ -25,15 +25,15 @@
             @foreach (var vehicle in b.GetVehicles())
             {
                 <tr>
-                    <th scope="row">@vehicle.RegNo</th>
-                    <td>@vehicle.Make</td>
-                    <td>@vehicle.Odometer</td>
-                    <td>@vehicle.CostKm</td>
-                    <td>@vehicle.VehicleType</td>
-                    <td>@vehicle.DayCost(vehicle.VehicleType)</td>
-                    <!--  Ska styla en knapp sen -->
-                        <td>@vehicle.VehicleStatus</td>
-                        
+                    <th scope="row" class="align-middle">@vehicle.RegNo</th>
+                    <td class="align-middle">@vehicle.Make</td>
+                    <td class="align-middle">@vehicle.Odometer</td>
+                    <td class="align-middle">@vehicle.CostKm</td>
+                    <td class="align-middle">@vehicle.VehicleType</td>
+                    <td class="align-middle">@vehicle.DayCost(vehicle.VehicleType)</td>
+                    <td>
+                        <label class=@(vehicle.VehicleStatus == Common.Enums.VehicleStatuses.Booked ? "btn-sm btn-danger" : "btn-sm btn-dark")>@vehicle.VehicleStatus</label>
+                    </td>                       
                 </tr>
             }           
         </tbody>
@@ -59,21 +59,23 @@
             @foreach (var booking in b.GetBookings())
             {
                 <tr>
-                    <th scope="row">@booking.Vehicle.RegNo</th>
-                    <td>@($"{booking.Person.FirstName} {booking.Person.LastName} ({booking.Person.CustomerId})")</td>
-                    <td>@booking.InitialOdometer</td>
-                    <td>@booking.ReturnOdometer</td>
-                    <td>@booking.BookingDate.ToShortDateString()</td>
-                    <td>@(booking.ReturnDate?.ToShortDateString() ?? "")</td>
-                    <td>@booking.TotalCost</td>
-                    <td>@booking.VehicleBookingStatus</td>
+                    <th scope="row" class="align-middle">@booking.Vehicle.RegNo</th>
+                    <td class="align-middle">@($"{booking.Person.FirstName} {booking.Person.LastName} ({booking.Person.CustomerId})")</td>
+                    <td class="align-middle">@booking.InitialOdometer</td>
+                    <td class="align-middle">@booking.ReturnOdometer</td>
+                    <td class="align-middle">@booking.BookingDate.ToShortDateString()</td>
+                    <td class="align-middle">@(booking.ReturnDate?.ToShortDateString() ?? "")</td>
+                    <td class="align-middle">@booking.TotalCost</td>
+                    <td>
+                        <label class=@(booking.VehicleBookingStatus == Common.Enums.VehicleBookingStatuses.Closed ? "btn-sm btn-danger" : "btn-sm btn-success")>@booking.VehicleBookingStatus</label>
+                    </td>
                 </tr> 
             }
         </tbody>
     </table>
 </div>
 
-<div>
+<div class="col-6">
     <div class="heading-font">Customers</div>
     <table class="table border border-secondary">
         <thead>
